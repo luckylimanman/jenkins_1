@@ -1,10 +1,11 @@
+Jenkinsfile (Declarative Pipeline)
 /* Requires the Docker Pipeline plugin */
 pipeline {
-    agent { docker { image 'maven:3.9.0-eclipse-temurin-11' } }
+    agent { docker { image 'python:3.10.7-alpine' } }
     stages {
         stage('build') {
             steps {
-                sh 'mvn --version'
+                sh 'python3 --version'
             }
         }
     }
