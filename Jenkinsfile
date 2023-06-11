@@ -22,5 +22,10 @@ pipeline {
             archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
             junit 'build/reports/**/*.xml'
         }
+        failure {
+        mail to: 'mandli@redhat.com',
+             subject: "jenkins learn fail",
+             body: "Something is wrong"
+    }
     }
 }
