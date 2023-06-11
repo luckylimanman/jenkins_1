@@ -29,15 +29,15 @@ pipeline {
             }
         }
     }
-    post {
-        success {
-            sh 'sudo git clean -fdx'
-        }
-        failure {
-        sh 'sudo git clean -fdx'
-        mail to: 'mandli@redhat.com',
-             subject: "jenkins learn fail",
-             body: "Something is wrong"
-    }
-    }
+    // post {
+    //     success {
+    //         sh 'sudo git clean -fdx'
+    //     }
+    //     failure {
+    //     sh 'sudo git clean -fdx'
+    //     mail to: 'mandli@redhat.com',
+    //          subject: "jenkins learn fail",
+    //          body: "Something is wrong"
+    // }
+    // }
 }
