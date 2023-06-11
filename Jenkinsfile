@@ -20,11 +20,11 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                git branch: main, url: 'https://gitlab.cee.redhat.com/cplabstests/e2e.git'
-                sh '''
-                npm install
-                node index.js
-                '''
+                // git branch: main, url: 'https://gitlab.cee.redhat.com/cplabstests/e2e.git'
+                // sh '''
+                // npm install
+                // node index.js
+                // '''
                 sh 'echo "Hello World"'
             }
         }
