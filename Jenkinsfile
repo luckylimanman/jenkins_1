@@ -21,7 +21,7 @@ pipeline {
         stage('Prepare') {
             steps {
                 script {
-                    git branch: main, url: 'https://github.com/luckylimanman/cypress_code.git'
+                    git 'https://github.com/luckylimanman/cypress_code.git'
                 }
             }
         }
