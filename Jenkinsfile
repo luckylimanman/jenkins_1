@@ -18,9 +18,15 @@ pipeline {
     agent any
 
     stages {
+        stage('Prepare') {
+            steps {
+                script {
+                    git branch: main, url: 'https://github.com/luckylimanman/cypress_code'
+                }
+            }
+        }
         stage('Build') {
             steps {
-                git branch: main, url: 'https://gitlab.cee.redhat.com/cplabstests/e2e.git'
                 sh '''
                 npm install
                 node index.js
