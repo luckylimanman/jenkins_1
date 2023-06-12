@@ -21,7 +21,7 @@ pipeline {
         stage('Prepare') {
             steps {
                 script {
-                    git 'https://github.com/luckylimanman/cypress_code.git'
+                    git branch: 'main', url: 'https://github.com/luckylimanman/cypress_code.git'
                 }
             }
         }
@@ -35,6 +35,7 @@ pipeline {
             }
         }
     }
+}
     // post {
     //     success {
     //         sh 'sudo git clean -fdx'
@@ -46,4 +47,3 @@ pipeline {
     //          body: "Something is wrong"
     // }
     // }
-}
