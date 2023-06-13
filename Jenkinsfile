@@ -16,17 +16,18 @@
 
 pipeline {
     agent any
-
+    tools { nodejs "nodejs_lim"}
     stages {
-        stage('Prepare') {
-            steps {
-                script {
-                    git branch: 'main', url: 'https://github.com/luckylimanman/cypress_code.git'
-                }
-            }
-        }
+        // stage('Prepare') {
+        //     steps {
+        //         script {
+        //             git branch: 'main', url: 'https://github.com/luckylimanman/cypress_code.git'
+        //         }
+        //     }
+        // }
         stage('Build') {
             steps {
+                // cleanWs()
                 sh '''
                 npm install
                 node index.js
